@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 #include <array>
@@ -9,7 +10,8 @@
 #include <set>
 #include <functional>
 #include <numeric>
-#include <algorithm>  //sort
+
+#include "Week12Assignment.h"
 
 using std::cout;
 using std::endl;
@@ -18,60 +20,19 @@ using std::accumulate;
 
 using namespace std;
 
-
-class Shape {
-
-private:
-	int x; 
-	int y; 
-
-	string name; 
-
-public:
-	Shape(int px, int py, string pname) : x(px), y(py), name(pname) { 
-		
-	}
-
-	virtual ~Shape(){
-	}
+Shape::Shape(int px, int py, string pname) : x(px), y(py), name(pname) { 
 	
-	virtual  string  getName() const  { return name; }
-};
-
-
-class Square : public Shape {
-
-private:
-	int length;
-
-public:
-
-	Square(int px, int py, string pname, int plength) : length(plength), Shape(px, py, pname) { ; }
-};
-
-int main()
-{
-	//C++ is a typed language, each container is defined
-	//to manage a specific type. With objects, you can have a container
-	//specified for a superclass, but any of its subclasses can be 
-	//manage by the containers
-	vector<Square *>  squares;
-
-	squares.push_back(new Square(1, 1, "1st square", 1) );
-	squares.push_back(new Square(2, 2, "2nd square", 2) );
-	squares.push_back(new Square(3, 3, "3rd square", 3) );
-
-	//1-Assignment: sort them in descending order of length, 
-	// then cout their lenght and name
-	
-	//map : unique, multi-map : duplicate
-	map<string, Square *> mapSquares;
-
-	std::transform(squares.begin(), squares.end(), std::inserter(mapSquares, mapSquares.end()),
-               []( Square *s) { return std::make_pair(s->getName(), s); });
-			   
-	//2-Assignment: using the map, display the lenght of the square named "2nd square"
-
-	return 0;
-
 }
+
+Shape::~Shape(){
+}
+	
+string  Shape::getName() const  { return name; }
+
+Rectangle::Rectangle(int px, int py, string pname, int plength, int pheight) : Shape(px, py, pname), length(plength), height(pheight) { ; }
+
+Square::Square(int px, int py, string pname, int plength) : Rectangle(px, py, pname, plength, plength) { 
+	; 
+}
+
+

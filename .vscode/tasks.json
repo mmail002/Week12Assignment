@@ -9,9 +9,9 @@
             "command": "g++",
             "args": [
                 "-pedantic", 
-                "-ggdb"  
+                "-ggdb",  
                 "-o",   
-                "${workspaceFolder}\\${fileBasenameNoExtension}.exe"    //output file name
+                "${workspaceFolder}\\${fileBasenameNoExtension}.exe",    //output file name
                 "${workspaceFolder}\\*.cpp",  //${file} gives full path of the file
             ],
             "group": {
