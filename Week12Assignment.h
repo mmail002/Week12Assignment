@@ -20,6 +20,7 @@ using std::string;
 
 using namespace std;
 
+const string SMALL_RECTANGLE = "small rectangle";
 
 class Shape {
 
@@ -60,3 +61,8 @@ public:
 	Square(int px, int py, string pname, int plength);
 };
 
+int myFunction1();
+int myFunction2();
+int myFunction3();
+string myFunction4();
+int myFunction5();

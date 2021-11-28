@@ -1,4 +1,15 @@
+/* GitHub requirement: you must commit/push 
+                       (private repository-free with the student pack)
+                       your project to your GitHub Account
+   insert your name:
+   insert your github user:
+   insert your project name in github:
+   invite as a collaborator: mmail002
 
+   once completed, you must upload it to GitHub
+
+	you may have to modify the .h, .cpp and Week12AssignmentTest.cpp for this assignment
+*/
 
 #include <cassert>
 #include <algorithm>  //sort
@@ -11,97 +22,26 @@ using std::cout;
 using std::endl;
 using std::max;
 
-//you will have to modify the .h and .cpp for this assignment
 
-
-void myFunction1() {
-	Square s(11, 22, "small square", 2);
-	Rectangle r(11, 22, "small rectangle", 2, 3);
-
-	vector<Shape *>  shapes;
-
-	int sumSurface = 0;
-
-	//you must insert both shape in shapes
-	//then do the sum of their surface
-
-	//check if sumSurface is correct
-	assert( sumSurface == 10);
-}
-
-void myFunction2() {
-	Square s(11, 22, "small square", 2);
-	Rectangle r(11, 22, "small rectangle", 2, 3);
-
-	vector<Shape *>  shapes;
-
-	//you must insert both shape in shapes
-	//then sort the collection in descending order of surface
-
-	//check if the collection is sorting correctly
-	Shape * sresult = shapes.at( 0 );
-	assert( sresult->getSurface() == 6);
-}
-
-void myFunction3() {
-	Square s(11, 22, "small square", 2);
-	Rectangle r(11, 22, "small rectangle", 2, 3);
-
-	vector<Shape *>  shapes;
-
-	//you must insert both shape in shapes
-	//then find the Shape with the biggest surface
-	//hint: in algo, there is a max, similar to stable_sort 
-	Shape * biggest = nullptr;
-
-							  
-	//check if the result is correct
-	assert( biggest->getSurface() == 6);
-}
-
-const string SMALL_RECTANGLE = "small rectangle";
-
-void myFunction4() {
-	Square s(11, 22, "small square", 2);
-	Rectangle r(11, 22, SMALL_RECTANGLE, 2, 3);
-
-	map<string, Shape *> shapes;
-
-	//you must insert both shape in shapes
-	//then find the Shape with the name SMALL_RECTANGLE
-	Shape * smallRectangle = nullptr;
-
-							  
-	//check if the result is correct
-	assert( smallRectangle->getName().compare(SMALL_RECTANGLE) == 0);
-}
-
-void myFunction5() {
-	Square s(11, 22, "small square", 2);
-	Rectangle r(11, 22, SMALL_RECTANGLE, 2, 3);
-
-	map<string, Shape *> shapes;
-
-	int sumSurface = 0;
-
-	//you must insert both shape in shapes
-	//then do the sum of their surface
-
-	//check if sumSurface is correct
-	assert( sumSurface == 10);
-
-							  
-}
 
 int main() 
 {
-	myFunction1();
+	int sum  = myFunction1();
+	//check if sumSurface is correct
+	assert( sum == 22);
 
-	myFunction2();
+	int maxSurface = myFunction2();
+	assert( maxSurface == 20);
 
-	myFunction3();
+	int biggest = myFunction3();
+	//check if the result is correct
+	assert( biggest == 20);
 
-	myFunction4();
+	string name = myFunction4();
+	assert( name.compare(SMALL_RECTANGLE) == 0);
 
-	myFunction5();
+
+	int sumSurface = myFunction5();
+	assert( sumSurface == 29);
+
 }	
